@@ -1,6 +1,6 @@
-{% extends 'ResqueBundle::layout.html.twig' %}
+{% extends '@Resque/layout.html.twig' %}
 {% block body %}
-{% include "ResqueBundle:Default:_menu.html.twig" with {activeNav: 'homepage'} %}
+{% include "@Resque/Default/_menu.html.twig" with {activeNav: 'homepage'} %}
     <div class="col-md-12">
         <h2>Queues</h2>
         <p>This list shows all registered queues with the number of jobs currently in each queue.</p>

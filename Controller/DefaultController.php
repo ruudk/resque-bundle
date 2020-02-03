@@ -21,7 +21,7 @@ class DefaultController extends Controller
         $this->getResque()->pruneDeadWorkers();
 
         return $this->render(
-            'ResqueBundle:Default:index.html.twig',
+            '@Resque/Default/index.html.twig',
             [
                 'resque' => $this->getResque(),
             ]
@@ -53,7 +53,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'ResqueBundle:Default:queue_show.html.twig',
+            '@Resque/Default/queue_show.html.twig',
             [
                 'queue'      => $queue,
                 'jobs'       => $jobs,
@@ -99,7 +99,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'ResqueBundle:Default:failed_list.html.twig',
+            '@Resque/Default/failed_list.html.twig',
             [
                 'jobs'       => $jobs,
                 'showingAll' => $showingAll,
@@ -113,7 +113,7 @@ class DefaultController extends Controller
     public function listScheduledAction()
     {
         return $this->render(
-            'ResqueBundle:Default:scheduled_list.html.twig',
+            '@Resque/Default/scheduled_list.html.twig',
             [
                 'timestamps' => $this->getResque()->getDelayedJobTimestamps()
             ]
@@ -134,7 +134,7 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'ResqueBundle:Default:scheduled_timestamp.html.twig',
+            '@Resque/Default/scheduled_timestamp.html.twig',
             [
                 'timestamp' => $timestamp,
                 'jobs'      => $jobs
